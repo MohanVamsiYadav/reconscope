@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ReconScope v2</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <div class="brand"><span class="logo">R</span><div><b>ReconScope</b><small>Information Gathering Lab</small></div></div>
+  <span id="apiStatus" class="offline">● API offline</span>
+</header>
+
+<main>
+<section class="hero">
+  <div>
+    <span class="tag">CYBERSECURITY • RECONNAISSANCE</span>
+    <h1>Gather public information<br><em>from one dashboard.</em></h1>
+    <p>DNS records, resolved IPs, reverse DNS, HTTP metadata and RDAP registration data.</p>
+  </div>
+
+  <div class="scanner">
+    <label>AUTHORIZED TARGET</label>
+    <div class="row">
+      <input id="target" placeholder="example.com" value="example.com">
+      <button id="scan">Gather Information</button>
+    </div>
+    <div class="hint">Use only domains/IPs you own or are authorized to assess.</div>
+  </div>
+</section>
+
+<div id="error" class="error hidden"></div>
+<div id="loading" class="loading hidden">Gathering information from the selected public services…</div>
+
+<section id="results" class="hidden">
+  <div class="heading"><div><span class="tag">RESULTS</span><h2 id="targetName">—</h2></div><button id="copy">Copy JSON</button></div>
+
+  <div class="stats">
+    <div><small>Resolved IPs</small><b id="ipCount">0</b></div>
+    <div><small>DNS Records</small><b id="dnsCount">0</b></div>
+    <div><small>HTTP Status</small><b id="httpStatus">—</b></div>
+    <div><small>RDAP</small><b id="rdap">—</b></div>
+  </div>
+
+  <div class="cards">
+    <article><h3>DNS Records</h3><pre id="dns"></pre></article>
+    <article><h3>HTTP Information</h3><pre id="http"></pre></article>
+    <article class="wide"><h3>RDAP Information</h3><pre id="rdapData"></pre></article>
+  </div>
+</section>
+</main>
+
+<footer>ReconScope v2 • Educational use only</footer>
+<script src="script.js"></script>
+</body>
+</html>
