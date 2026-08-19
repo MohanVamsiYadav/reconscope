@@ -1,4 +1,4 @@
-# ReconScope v2
+# ReconScope 
 
 This version fixes common causes of empty results:
 - Accepts domain, IP, http:// and https:// input.
